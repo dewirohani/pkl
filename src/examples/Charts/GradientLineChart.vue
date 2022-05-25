@@ -77,19 +77,7 @@ export default {
             data: this.chart.datasets[0].data,
             maxBarThickness: 6,
           },
-          {
-            label: this.chart.datasets[1].label,
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            // eslint-disable-next-line no-dupe-keys
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: this.chart.datasets[1].data,
-            maxBarThickness: 6,
-          },
+          
         ],
       },
       options: {

@@ -1,45 +1,62 @@
 <template>
+
   <div
-    class="w-auto h-auto collapse navbar-collapse max-height-vh-100 h-100"
+    class="w-auto h-auto collapse navbar-collapse max-height-vh-200 h-200"
     id="sidenav-collapse-main"
   >
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ">
       <li class="nav-item">
+    
         <sidenav-collapse navText="Dashboard" :to="{ name: 'Dashboard' }">
           <template #icon>
             <shop />
           </template>
         </sidenav-collapse>
       </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="Tables" :to="{ name: 'Tables' }">
-          <template #icon>
-            <office />
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="Billing" :to="{ name: 'Billing' }">
-          <template #icon>
-            <credit-card />
-          </template>
-        </sidenav-collapse>
-      </li>
-
-      <li class="nav-item">
-        <sidenav-collapse
-          navText="Virtual Reality"
-          :to="{ name: 'Virtual Reality' }"
+       <li class="mt-3 nav-item">
+        <h6
+          class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
+          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
         >
+          MASTER
+        </h6>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Data Siswa" :to="{ name: 'DataSiswa' }">
           <template #icon>
             <box3d />
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="RTL" :to="{ name: 'Rtl' }">
+        <sidenav-collapse navText="Data Guru" :to="{ name: 'DataGuru' }">
           <template #icon>
-            <settings />
+            <Box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+
+      <li class="nav-item">
+        <sidenav-collapse
+          navText="Data Instansi"
+          :to="{ name: 'DataInstansi' }"
+        >
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+       <li class="nav-item">
+        <sidenav-collapse navText="Data Kelas" :to="{ name: 'DataKelas' }">
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+       <li class="nav-item">
+        <sidenav-collapse navText="Data Jurusan" :to="{ name: 'DataJurusan' }">
+          <template #icon>
+            <box3d />
           </template>
         </sidenav-collapse>
       </li>
@@ -48,8 +65,76 @@
           class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
           :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
         >
-          PAGES
+          PKL
         </h6>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Periode PKL" :to="{ name: 'DataPeriode' }">
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Data PKL" :to="{ name: 'DataPengajuanPKL' }">
+          <template #icon>
+            <Box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Data Penempatan" :to="{ name: 'DataPenempatan' }">
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="mt-3 nav-item">
+        <h6
+          class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
+          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
+        >
+          ATTANDANCE
+        </h6>
+      </li>
+        
+      <li class="nav-item">
+        <sidenav-collapse navText="Data Attandance" :to="{ name: 'DataAttandance' }">
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+       <li class="mt-3 nav-item">
+        <h6
+          class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
+          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
+        >
+          LOGBOOK
+        </h6>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Data Logbook" :to="{ name: 'DataLogbook' }">
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="mt-3 nav-item">
+        <h6
+          class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
+          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
+        >
+          REPORT CERTIFICATE
+        </h6>
+      </li>
+      
+      <li class="nav-item">
+        <sidenav-collapse navText="Data Certificate" :to="{ name: 'DataCertificate' }">
+          <template #icon>
+            <box3d />
+          </template>
+        </sidenav-collapse>
       </li>
       <li class="nav-item">
         <sidenav-collapse navText="Profile" :to="{ name: 'Profile' }">
@@ -74,34 +159,18 @@
       </li>
     </ul>
   </div>
-  <div class="pt-3 mx-3 mt-3 sidenav-footer">
-    <sidenav-card
-      :class="cardBg"
-      textPrimary="Need Help?"
-      textSecondary="Please check our docs"
-      route="https://www.creative-tim.com/learning-lab/vue/overview/soft-ui-dashboard/"
-      label="Documentation"
-      icon="ni ni-diamond"
-    />
-    <a
-      class="btn bg-gradient-success mt-4 w-100"
-      href="https://www.creative-tim.com/product/vue-soft-ui-dashboard-pro?ref=vsud"
-      type="button"
-      >Upgrade to pro</a
-    >
-  </div>
+
 </template>
 <script>
 import SidenavCollapse from "./SidenavCollapse.vue";
-import SidenavCard from "./SidenavCard.vue";
 import Shop from "../../components/Icon/Shop.vue";
-import Office from "../../components/Icon/Office.vue";
-import CreditCard from "../../components/Icon/CreditCard.vue";
+// import Office from "../../components/Icon/Office.vue";
+// import CreditCard from "../../components/Icon/CreditCard.vue";
 import Box3d from "../../components/Icon/Box3d.vue";
 import CustomerSupport from "../../components/Icon/CustomerSupport.vue";
 import Document from "../../components/Icon/Document.vue";
 import Spaceship from "../../components/Icon/Spaceship.vue";
-import Settings from "../../components/Icon/Settings.vue";
+
 
 export default {
   name: "SidenavList",
@@ -110,22 +179,21 @@ export default {
   },
   data() {
     return {
-      title: "Soft UI Dashboard PRO",
+      title: "PKL SMKN 3 PAMEKASAN",
       controls: "dashboardsExamples",
       isActive: "active",
     };
   },
   components: {
     SidenavCollapse,
-    SidenavCard,
     Shop,
-    Office,
-    CreditCard,
+    // Office,
+    // CreditCard,
     Box3d,
     CustomerSupport,
     Document,
     Spaceship,
-    Settings,
+    
   },
   methods: {
     getRoute() {
